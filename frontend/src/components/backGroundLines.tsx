@@ -2,6 +2,8 @@
 import { cn } from "../utils/accternity";
 import { motion } from "framer-motion";
 import React from "react";
+import Home from "./home";
+import Box from "./Box";
 
 export const BackgroundLines = ({
   children,
@@ -21,9 +23,18 @@ export const BackgroundLines = ({
         className
       )}
     >
+      
+      
+
+
+
       <SVG svgOptions={svgOptions} />
       {children}
+      <Home />
+      <Box />
+      
     </div>
+    
   );
 };
 
