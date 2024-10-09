@@ -13,7 +13,7 @@ const Box = (props: any) => {
           </svg>
           
         </div>
-        <p className="text-slate-400 leading-normal font-mono mb-4 px-16 m-12  ">
+        <p className="text-slate-400 leading-normal quicksand-normal mb-4 px-16 m-12  ">
           {/* Your desired output will show here... */}
            
              {/* {props.output.data} */}
