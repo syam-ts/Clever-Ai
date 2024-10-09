@@ -55,7 +55,7 @@ export const BackgroundLines = ({
   return (
     <div
       className={cn(
-        "h-[20rem] md:h-screen w-full bg-white dark:bg-black",
+        "h-[20rem] md:h-screen w-full bg-black dark:bg-black",
         className
       )}
     >
@@ -68,7 +68,7 @@ export const BackgroundLines = ({
       
 
 
-      <div className="w-full max-w-sm min-w-[200px] mx-auto pt-44">
+      <div className="w-full max-w-sm min-w-[200px] mx-auto pt-44 ">
   <div className="relative flex items-center">
     <form className='flex'
        onSubmit={handleSubmit}
