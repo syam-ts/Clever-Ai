@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import React, { useState } from "react";
 import Box from "./Box";
 import Footer from "./Footer";
+import { TextHoverEffect } from "./Logo";
 
 export const BackgroundLines = ({
   children,
@@ -56,11 +57,16 @@ export const BackgroundLines = ({
   return (
     <div
       className={cn(
-        "h-[20rem] md:h-screen w-full bg-black dark:bg-black",
+        "h-[20rem] md:h-screen w-full bg-black ",
         className
       )}
     >
       
+        
+       <div className='w-2/3 py-4 absolute px-1'>
+        
+      <TextHoverEffect duration={2} text={"Clever-Ai"} />
+       </div>
 
 
       <SVG svgOptions={svgOptions} />
@@ -103,6 +109,7 @@ export const BackgroundLines = ({
  
       <Box output={outputBox} />
       <Footer />
+      
     </div>
     
   );
