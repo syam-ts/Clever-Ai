@@ -3,6 +3,7 @@ import { cn } from "../utils/accternity";
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 import Box from "./Box";
+import Footer from "./Footer";
 
 export const BackgroundLines = ({
   children,
@@ -101,7 +102,7 @@ export const BackgroundLines = ({
 
  
       <Box output={outputBox} />
-      
+      <Footer />
     </div>
     
   );
