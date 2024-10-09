@@ -1,4 +1,4 @@
-import {BackgroundLines} from './components/backGroundLines'
+import {BackgroundLines} from './components/Home'
  
  
 
