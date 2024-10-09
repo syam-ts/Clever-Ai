@@ -1,6 +1,5 @@
-import { BackgroundLines } from "./components/backGroundLines"
-import Home from "./components/home"
-
+import {BackgroundLines} from './components/backGroundLines'
+ 
  
 
 function App() {
