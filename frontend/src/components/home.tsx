@@ -2,7 +2,6 @@
 import { cn } from "../utils/accternity";
 import { motion } from "framer-motion";
 import React, { useState } from "react";
-import SearchBox from "./SearchBox";
 import Box from "./Box";
 
 export const BackgroundLines = ({
@@ -20,8 +19,6 @@ export const BackgroundLines = ({
 
   const [formData, setFormData]: [ formData: any, setFormdata: any] = useState({});
 
-
-  const [input , setInput] = useState({});
 
   const [outputBox, setOutputBox] = useState('')
 
@@ -73,7 +70,7 @@ export const BackgroundLines = ({
 
       <div className="w-full max-w-sm min-w-[200px] mx-auto pt-44">
   <div className="relative flex items-center">
-    <form
+    <form className='flex'
        onSubmit={handleSubmit}
     >
 
@@ -83,8 +80,8 @@ export const BackgroundLines = ({
     </svg>
  
     <input
-    className="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md pl-10 pr-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
-    placeholder="Something under the AI..." 
+    className="w-full bg-transparent placeholder:text-slate-400 text-slate-300 text-sm border border-slate-200 rounded-md pl-10 pr-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+    placeholder="Solution for everything ..." 
     onChange={handleChange}
      
     />

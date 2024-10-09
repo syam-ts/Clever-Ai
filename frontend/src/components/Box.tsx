@@ -1,3 +1,4 @@
+import { TextGenerateEffectDemo } from "./Ef";
 
 
 const Box = (props: any) => {
@@ -15,8 +16,9 @@ const Box = (props: any) => {
           </h5>
         </div>
         <p className="text-slate-400 leading-normal font-bold mb-4 px-44 m-12 ">
-          */}
-         {props.output.data}
+          {/* Your desired output will show here... */}
+         
+         <TextGenerateEffectDemo words={props.output.data} />
         </p>
         <div>
         </div>
