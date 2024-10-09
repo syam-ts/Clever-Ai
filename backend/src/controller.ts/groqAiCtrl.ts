@@ -13,13 +13,19 @@ apiKey: process.env.GROQ_API_KEY,
 
 export async function main(req: any, res: any) {
 try {
+
+    console.log('hte boyd ', req.body)
 const {content } = req.body;
+
 
 
 const chatCompletion = await getResult(content);
 // Print the completion returned by the LLM.
 
-res.json(chatCompletion.choices[0]?.message?.content);
+  const data = chatCompletion.choices[0]?.message?.content
+
+res.json({data});
+ 
 } catch (err: any) {
 res.json({ message: "Error fetching chat completion:", err });
 }

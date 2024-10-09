@@ -1,6 +1,6 @@
 
 import { Router } from 'express'
-import {main} from '../controller/groqAiCtrl'
+import {main} from '../controller.ts/groqAiCtrl'
 
 const router = Router();
 
