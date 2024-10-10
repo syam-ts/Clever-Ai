@@ -1,10 +1,10 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
  
-
+console.log('Env : ', process)
  
 const firebaseConfig = {
-  apiKey: "AIzaSyCzAPR9NBtLRuFZkpcJoZ6ABqshKLadiaU",
+  apiKey: process.env.FIREBASE_API_KEY,
   authDomain: "clever-ai-5bc0c.firebaseapp.com",
   projectId: "clever-ai-5bc0c",
   storageBucket: "clever-ai-5bc0c.appspot.com",
