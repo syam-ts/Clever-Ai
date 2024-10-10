@@ -28,8 +28,7 @@ export const BackgroundLines = ({
   };
 
   const handleSubmit = async (e: any) => {
-    e.preventDefault();
-    console.log(formData);
+    e.preventDefault(); 
     try {
       const res = await fetch(`http://localhost:3000/getResult`, {
         method: "POST",
