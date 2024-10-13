@@ -2,7 +2,6 @@ import dotenv from "dotenv";
 dotenv.config();
 
 import Groq from "groq-sdk";
-console.log("The env ", process.env.GROQ_API_KEY);
 
 const groq = new Groq({
   apiKey: process.env.GROQ_API_KEY,
@@ -10,11 +9,10 @@ const groq = new Groq({
 
 export async function main(req: any, res: any) {
   try {
-    console.log("hte boyd ", req.body);
+    
     const { content } = req.body;
 
     const chatCompletion = await getResult(content);
-    // Print the completion returned by the LLM.
 
     const data = chatCompletion.choices[0]?.message?.content;
 
