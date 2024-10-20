@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCzAPR9NBtLRuFZkpcJoZ6ABqshKLadiaU",
+  apiKey: process.env.FIREBASE_API_KEY,
   authDomain: "clever-ai-5bc0c.firebaseapp.com",
   projectId: "clever-ai-5bc0c",
   storageBucket: "clever-ai-5bc0c.appspot.com",
