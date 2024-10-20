@@ -3,6 +3,7 @@ import Footer from './components/Footer'
 import {BackgroundLines} from './components/Home'
 import SignUp from './components/SignUp'
 import { TextHoverEffect } from './components/Logo'
+import Signout from "./components/SignOut"
 
  
 
@@ -16,6 +17,7 @@ const App = () => {
        <Route path='/' element={   <BackgroundLines />} />
        <Route path='/foo' element={   <Footer />} />
        <Route path='/signup' element={   <SignUp />} />
+       <Route path='/signout' element={   <Signout />} />
         
     </Routes>
  
