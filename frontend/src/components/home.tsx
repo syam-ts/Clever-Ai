@@ -1,6 +1,7 @@
 "use client";
 import { cn } from "../utils/accternity";
 import { motion } from "framer-motion";
+import Profile from './Profile'
 import React, { useState } from "react";
 import Box from "./Box";
 import Footer from "./Footer";
@@ -47,9 +48,17 @@ export const BackgroundLines = ({
 
   return (
     <div className={cn("h-[20rem] md:h-screen w-full bg-black ", className)}>
-      <div className="w-2/3 py-4 absolute px-1">
-        <TextHoverEffect duration={2} text={"Clever-Ai"} />
+
+      <div className="w-full py-4 absolute px-1 flex">
+        
+       <TextHoverEffect  duration={2} text={"Clever-Ai"} />
+       
+        
+        <div className='pl-44'>
+        <Profile />
+        </div>
       </div>
+   
 
       <SVG svgOptions={svgOptions} />
       {children}
@@ -86,6 +95,7 @@ export const BackgroundLines = ({
         </div>
       </div>
 
+       
       <Box output={outputBox} />
       <Footer />
     </div>

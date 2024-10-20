@@ -9,7 +9,6 @@ const groq = new Groq({
 
 export async function main(req: any, res: any) {
   try {
-    
     const { content } = req.body;
 
     const chatCompletion = await getResult(content);
