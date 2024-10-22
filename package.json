@@ -16,6 +16,7 @@
     "typescript": "^5.6.3"
   },
   "scripts": {
+    "type": "module",
     "dev": "node backend/dist/app.js"
   },
   "devDependencies": {
