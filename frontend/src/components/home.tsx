@@ -9,25 +9,20 @@ import { signOut, getAuth } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import app from "../utils/firebase";
 import Profile from "./Profile";
+import { useSelector } from "react-redux";
 
 const auth = getAuth(app);
 
-export const Home = ({
-  children,
-  className,
-  svgOptions,
-}: {
-  children: React.ReactNode;
-  className?: string;
-  svgOptions?: {
-    duration?: number;
-  };
-}) => {
-  const [formData, setFormData]: [formData: any, setFormdata: any] = useState(
-    {}
-  );
+export const Home = ({ children,className,svgOptions,}: { children: React.ReactNode;
+  className?: string; svgOptions?: {duration?: number }}) => {
+
+  const [formData, setFormData]: [formData: any, setFormdata: any] = useState({});
   const [outputBox, setOutputBox] = useState("");
   const navigate = useNavigate();
+  const user = useSelector((store: any) => store.user.currentUser);
+
+  
+ 
 
   const handleChange = (e: any) => {
     setFormData(e.target.value);
