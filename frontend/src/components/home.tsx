@@ -47,15 +47,7 @@ export const Home = ({ children,className,svgOptions,}: { children: React.ReactN
     }
   };
 
-  // const handleSignOut = () => {
-  //   try {
-  //     signOut(auth);
-  //     console.log("Signed out");
-  //     navigate("/signup");
-  //   } catch (err: any) {
-  //     console.log(err.message);
-  //   }
-  // };
+ 
 
   return (
 
