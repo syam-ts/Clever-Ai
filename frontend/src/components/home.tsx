@@ -19,10 +19,10 @@ export const Home = ({ children,className,svgOptions,}: { children: React.ReactN
   const [formData, setFormData]: [formData: any, setFormdata: any] = useState({});
   const [outputBox, setOutputBox] = useState("");
   const navigate = useNavigate();
-  const user = useSelector((store: any) => store.userSlice.currentUser);
-  const isUser = useSelector((store: any) => store.userSlice.isUser);
+  const user = useSelector((store: any) => store.user.currentUser);
+  const isUser = useSelector((store: any) => store.user.isUser);
 
-  console.log('The use : ', user)
+  
  
 
   const handleChange = (e: any) => {
@@ -30,8 +30,14 @@ export const Home = ({ children,className,svgOptions,}: { children: React.ReactN
   };
 
   const handleSubmit = async (e: any) => {
+  
     e.preventDefault();
     try {
+      if(!isUser) {
+        navigate('/login'); 
+      } else {
+
+      
       const res = await fetch(`http://localhost:3000/getResult`, {
         method: "POST",
         headers: {
@@ -42,6 +48,7 @@ export const Home = ({ children,className,svgOptions,}: { children: React.ReactN
       const data = await res.json();
 
       setOutputBox(data);
+    }
     } catch (error) {
       console.log(error);
     }
@@ -93,7 +100,7 @@ export const Home = ({ children,className,svgOptions,}: { children: React.ReactN
 
             <button
               className="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2"
-              type="submit"
+              type="submit" 
             >
               Search
             </button>

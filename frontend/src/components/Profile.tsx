@@ -8,8 +8,8 @@ import { signOutUser } from '../Redux/slice';
 const auth = getAuth(app);
 
 const Profile = () => {
-  const userImage = useSelector((store: any) => store.userSlice.currentUser?.image);
-  const isUser = useSelector((store: any) => store.userSlice.isUser);
+  const userImage = useSelector((store: any) => store.user.currentUser?.image);
+  const isUser = useSelector((store: any) => store.user.isUser);
   const navigate = useNavigate();
   const dispatch = useDispatch();
  const logOutUser = () => {
