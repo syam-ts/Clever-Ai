@@ -38,7 +38,7 @@ export const Home = ({ children,className,svgOptions,}: { children: React.ReactN
       } else {
 
       
-      const res = await fetch(`http://localhost:3000/getResult`, {
+      const res = await fetch(`https://clever-ai-1.onrender.com/getResult`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
