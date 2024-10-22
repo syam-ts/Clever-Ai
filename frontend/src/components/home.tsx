@@ -1,13 +1,18 @@
 "use client";
 import { cn } from "../utils/accternity";
 import { motion } from "framer-motion";
-import Profile from './Profile'
 import React, { useState } from "react";
 import Box from "./Box";
 import Footer from "./Footer";
 import { TextHoverEffect } from "./Logo";
+import { signOut, getAuth } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+import app from "../utils/firebase";
+import Profile from "./Profile";
 
-export const BackgroundLines = ({
+const auth = getAuth(app);
+
+export const Home = ({
   children,
   className,
   svgOptions,
@@ -21,15 +26,15 @@ export const BackgroundLines = ({
   const [formData, setFormData]: [formData: any, setFormdata: any] = useState(
     {}
   );
-
   const [outputBox, setOutputBox] = useState("");
+  const navigate = useNavigate();
 
   const handleChange = (e: any) => {
     setFormData(e.target.value);
   };
 
   const handleSubmit = async (e: any) => {
-    e.preventDefault(); 
+    e.preventDefault();
     try {
       const res = await fetch(`http://localhost:3000/getResult`, {
         method: "POST",
@@ -46,24 +51,37 @@ export const BackgroundLines = ({
     }
   };
 
+  const handleSignOut = () => {
+    try {
+      signOut(auth);
+      console.log("Signed out");
+      navigate("/signup");
+    } catch (err: any) {
+      console.log(err.message);
+    }
+  };
+
   return (
+
     <div className={cn("h-[20rem] md:h-screen w-full bg-black ", className)}>
 
+      
       <div className="w-full py-4 absolute px-1 flex">
-        
-       <TextHoverEffect  duration={2} text={"Clever-Ai"} />
-       
-        
-        <div className='pl-44'>
-        <Profile />
-        </div>
+        <TextHoverEffect duration={2} text={"Clever-Ai"} />
       </div>
-   
+
+
+ {/* Signout */}
+ {/* <div className="cursor-pointer rounded-lg text-right pr-20 text-yellow-400 w-16 hover:bg-white">
+              <button onClick={handleSignOut}>Logout</button>
+              <span className='text-white cursor-pointer hover:text-black' onClick={(hi: any)=> {alert(hi)}}>sjfkj</span>
+        </div> */}
+
 
       <SVG svgOptions={svgOptions} />
       {children}
 
-      <div className="w-full max-w-sm min-w-[200px] mx-auto pt-44 ">
+      <div className="w-full max-w-sm min-w-[200px] mx-auto pt-44">
         <div className="relative flex items-center">
           <form className="flex" onSubmit={handleSubmit}>
             <svg
@@ -95,10 +113,12 @@ export const BackgroundLines = ({
         </div>
       </div>
 
-       
       <Box output={outputBox} />
-      <Footer />
-    </div>
+      <Footer /> 
+      <div className=' top-0 absolute w-full text-end'>
+      <Profile /> 
+      </div>
+     </div>
   );
 };
 
