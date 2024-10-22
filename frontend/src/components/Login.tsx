@@ -15,12 +15,10 @@ const Login = () => {
 const navigate = useNavigate();
 
     const handleLogin = async () => {
-      
       const provider = new GoogleAuthProvider();
       
       try {
         const result = await signInWithPopup(auth, provider);
-  
         const user = result.user;
         const userData = {
           id: user.uid,
@@ -28,7 +26,6 @@ const navigate = useNavigate();
           email: user.email,
           image: user.photoURL,
         };
-        console.log('The user : ', user);
         dispatch(signInUser(userData))
         navigate('/')
       } catch (err: any) {

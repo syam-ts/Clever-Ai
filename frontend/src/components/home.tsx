@@ -19,9 +19,10 @@ export const Home = ({ children,className,svgOptions,}: { children: React.ReactN
   const [formData, setFormData]: [formData: any, setFormdata: any] = useState({});
   const [outputBox, setOutputBox] = useState("");
   const navigate = useNavigate();
-  const user = useSelector((store: any) => store.user.currentUser);
+  const user = useSelector((store: any) => store.userSlice.currentUser);
+  const isUser = useSelector((store: any) => store.userSlice.isUser);
 
-  
+  console.log('The use : ', user)
  
 
   const handleChange = (e: any) => {
@@ -46,15 +47,15 @@ export const Home = ({ children,className,svgOptions,}: { children: React.ReactN
     }
   };
 
-  const handleSignOut = () => {
-    try {
-      signOut(auth);
-      console.log("Signed out");
-      navigate("/signup");
-    } catch (err: any) {
-      console.log(err.message);
-    }
-  };
+  // const handleSignOut = () => {
+  //   try {
+  //     signOut(auth);
+  //     console.log("Signed out");
+  //     navigate("/signup");
+  //   } catch (err: any) {
+  //     console.log(err.message);
+  //   }
+  // };
 
   return (
 
