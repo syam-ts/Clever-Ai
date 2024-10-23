@@ -1,11 +1,11 @@
-import { cn } from "../utils/accternity.ts";
+import { cn } from "../utils/accternity";
 import { motion } from "framer-motion";
 import React, { useState } from "react";
-import Box from "./Box.tsx";
-import Footer from "./Footer.tsx";
-import { TextHoverEffect } from "./Logo.tsx";
+import Box from "./Box";
+import Footer from "./Footer";
+import { TextHoverEffect } from "./Logo";
 import { useNavigate } from "react-router-dom";
-import Profile from "./Profile.tsx"
+import Profile from "./Profile"
 import { useSelector } from "react-redux";
 
 
