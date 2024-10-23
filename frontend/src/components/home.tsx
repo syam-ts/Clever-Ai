@@ -5,7 +5,7 @@ import Box from "./Box.tsx";
 import Footer from "./Footer.tsx";
 import { TextHoverEffect } from "./Logo.tsx";
 import { useNavigate } from "react-router-dom";
-import Profile from "./Profile.tsx";
+import Profile from "./Profile.tsx"
 import { useSelector } from "react-redux";
 
 
