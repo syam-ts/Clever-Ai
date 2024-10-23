@@ -1,4 +1,3 @@
-"use client";
 import { cn } from "../utils/accternity";
 import { motion } from "framer-motion";
 import React, { useState } from "react";
@@ -9,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import Profile from "./Profile";
 import { useSelector } from "react-redux";
 
-export const Home = ({
+ const Home = ({
   children,
   className,
   svgOptions,
@@ -37,7 +36,7 @@ export const Home = ({
       if (!isUser) {
         navigate("/login");
       } else {
-        const res = await fetch(`http://localhost:3000/getResult`, {
+        const res = await fetch(`https://clever-ai-4.onrender.com/getResult`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -221,3 +220,6 @@ const SVG = ({
     </motion.svg>
   );
 };
+
+
+export default Home;

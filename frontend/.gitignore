@@ -8,7 +8,7 @@ pnpm-debug.log*
 lerna-debug.log*
 
 backend/src/firebase.ts
-src/utils/Firebase_Api_Key.ts
+# src/utils/Firebase_Api_Key.ts
 
 node_modules
 dist
