@@ -5,10 +5,10 @@ import Box from "./Box";
 import Footer from "./Footer";
 import { TextHoverEffect } from "./Logo";
 import { useNavigate } from "react-router-dom";
-import Profile from "./Profile";
+import Profile from "./Profile.tsx";
 import { useSelector } from "react-redux";
 
- const Home = ({
+ const Home:any = ({
   children,
   className,
   svgOptions,
