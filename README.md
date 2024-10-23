@@ -12,7 +12,7 @@
 
 <h3> About</h3>
 <p style="font-family: sans";> 
- Ai Chatbot usign Generatice Ai from Groq . Highly responsive and super fast. For modern Ui , Aceternity UI were integrated also with Framer Motion.
+ Ai Chatbot usign Generatice Ai from Groq . Highly responsive and super fast. For modern Ui , Aceternity UI were integrated also with Framer Motion.The llm used in Clever-Ai is llama3-8b-8192
 </p>
 
 <br>* Tools </br>
