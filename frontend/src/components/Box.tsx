@@ -1,4 +1,5 @@
 import { TextGenerateEffectDemo } from "./Ef";
+import React from 'react';
 
 const Box = (props: any) => {
   return (
