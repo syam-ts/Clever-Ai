@@ -1,7 +1,7 @@
 "use client";
 import { useEffect } from "react";
 import { motion, stagger, useAnimate } from "framer-motion";
-import { cn } from "../utils/accternity";
+import { cn } from "../../src/utils/accternity";
 
 export const TextGenerateEffect = ({
   words,
