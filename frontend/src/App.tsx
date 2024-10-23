@@ -1,30 +1,26 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom"
-import Footer from './components/Footer'
-import { Home } from './components/Home'
-import Login from './components/Login'
-import Signout from "./components/SignOut"
-import { Provider } from 'react-redux'
-import store from './Redux/store'
- 
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Home } from "./components/Home";
+import Login from "./components/Login";
+import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
+import { store, persistor } from "./Redux/store";
 
-const App = () => {
+const App: React.FC = () => {
 
- 
   return (
-    <Provider store={store}> 
-   
-    <BrowserRouter>  
-    <Routes>
-       <Route path='/' element={<Home />} />
-       <Route path='/foo' element={<Footer />} />
-       <Route path='/login' element={<Login />} />
-       <Route path='/signout' element={<Signout />} />
-        
-    </Routes>
-    </BrowserRouter>  
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+          </Routes>
+        </BrowserRouter>
+      </PersistGate>
     </Provider>
-  )
-}
+  );
+};
+
+export default App;
 
 
-export default App

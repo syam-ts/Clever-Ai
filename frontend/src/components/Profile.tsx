@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { getAuth, signOut } from "firebase/auth";
 import app from "../utils/firebase";
 import { signOutUser } from '../Redux/slice';
+import { useEffect } from "react";
 
 
 const auth = getAuth(app);
@@ -14,7 +15,7 @@ const Profile = () => {
   const dispatch = useDispatch();
 
  const logOutUser = () => {
-  console.log('The image : ', userImage)
+
     try {
       signOut(auth);
       console.log("Signed out");
@@ -24,7 +25,12 @@ const Profile = () => {
       console.log(err.message);
     }
   
- }
+ };
+
+
+ useEffect(() => {
+    console.log('The image : ', userImage);
+    },[])
 
   return (
     <div className="pr-5 pt-4 flex justify-end">
@@ -33,9 +39,6 @@ const Profile = () => {
             <div className='flex'>
          
             <div className="relative inline-flex pr-12 pt-4">
-            <img className="w-10 h-10 rounded-full hidden" src={userImage} />
-    
-            <img className="w-10 h-10 rounded-full hidden" src={userImage} />
             <img className="w-10 h-10 rounded-full" src={userImage} />
           </div>
           <div className='pt-4'>
