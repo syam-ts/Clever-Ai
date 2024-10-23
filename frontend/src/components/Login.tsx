@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { signInUser } from '../Redux/slice'
 import { useEffect } from "react";
- 
 
 const auth = getAuth(app);
 
@@ -19,7 +18,7 @@ const Login = () => {
     if (isUser) {
       navigate('/')
     }
-  }, []);
+  }, [isUser]);
 
   const dispatch = useDispatch();
 
