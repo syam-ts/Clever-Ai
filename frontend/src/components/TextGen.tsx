@@ -2,7 +2,6 @@
 import { useEffect } from "react";
 import { motion, stagger, useAnimate } from "framer-motion";
 import { cn } from "../../src/utils/accternity";
-import React from 'react';
 
 export const TextGenerateEffect = ({
   words,

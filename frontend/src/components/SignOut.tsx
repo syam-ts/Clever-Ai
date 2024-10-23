@@ -1,7 +1,6 @@
 import { signOut, getAuth } from "firebase/auth";
 import app from '../utils/firebase'
 import { useNavigate } from "react-router-dom";
-import React from 'react';
 
 
 const auth = getAuth(app);

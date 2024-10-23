@@ -1,6 +1,5 @@
 import { TextGenerateEffect } from "./TextGen";
-import React from 'react';
-
+ 
 
 export function TextGenerateEffectDemo(props: any) {
   const words = props.words;

@@ -4,7 +4,6 @@ import { getAuth, signOut } from "firebase/auth";
 import app from "../utils/firebase";
 import { signOutUser } from '../Redux/slice';
 import { useEffect } from "react";
-import React from 'react';
 
 
 const auth = getAuth(app);
