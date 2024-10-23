@@ -5,78 +5,62 @@ import React, { useState } from "react";
 import Box from "./Box";
 import Footer from "./Footer";
 import { TextHoverEffect } from "./Logo";
-import { signOut, getAuth } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
-import app from "../utils/firebase";
 import Profile from "./Profile";
 import { useSelector } from "react-redux";
 
-const auth = getAuth(app);
-
-export const Home = ({ children,className,svgOptions,}: { children: React.ReactNode;
-  className?: string; svgOptions?: {duration?: number }}) => {
-
-  const [formData, setFormData]: [formData: any, setFormdata: any] = useState({});
+export const Home = ({
+  children,
+  className,
+  svgOptions,
+}: {
+  children: React.ReactNode;
+  className?: string;
+  svgOptions?: { duration?: number };
+}) => {
+  const [formData, setFormData]: [formData: any, setFormdata: any] = useState(
+    {}
+  );
   const [outputBox, setOutputBox] = useState("");
   const navigate = useNavigate();
-  const user = useSelector((store: any) => store.user.currentUser);
   const isUser = useSelector((store: any) => store.user.isUser);
-
-  
- 
 
   const handleChange = (e: any) => {
     setFormData(e.target.value);
   };
 
   const handleSubmit = async (e: any) => {
-  
     e.preventDefault();
     try {
-      if(!isUser) {
-        navigate('/login'); 
+      if (!isUser) {
+        navigate("/login");
       } else {
+        const res = await fetch(`http://localhost:3000/getResult`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ content: formData }),
+        });
+        const data = await res.json();
 
-      
-      const res = await fetch(`http://localhost:3000/getResult`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ content: formData }),
-      });
-      const data = await res.json();
-
-      setOutputBox(data);
-    }
+        setOutputBox(data);
+      }
     } catch (error) {
       console.log(error);
     }
   };
 
- 
-
   return (
-
     <div className={cn("h-[20rem] md:h-screen w-full bg-black ", className)}>
-
-      
-      <div className="w-full py-4 absolute px-1 flex">
+      <div className="w-2/3 absolute">
         <TextHoverEffect duration={2} text={"Clever-Ai"} />
       </div>
-
-
- {/* Signout */}
- {/* <div className="cursor-pointer rounded-lg text-right pr-20 text-yellow-400 w-16 hover:bg-white">
-              <button onClick={handleSignOut}>Logout</button>
-              <span className='text-white cursor-pointer hover:text-black' onClick={(hi: any)=> {alert(hi)}}>sjfkj</span>
-        </div> */}
-
 
       <SVG svgOptions={svgOptions} />
       {children}
 
-      <div className="w-full max-w-sm min-w-[200px] mx-auto pt-44">
+      <div className="w-full max-w-sm min-w-[200px] mx-auto pt-60">
         <div className="relative flex items-center">
           <form className="flex" onSubmit={handleSubmit}>
             <svg
@@ -100,7 +84,7 @@ export const Home = ({ children,className,svgOptions,}: { children: React.ReactN
 
             <button
               className="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2"
-              type="submit" 
+              type="submit"
             >
               Search
             </button>
@@ -109,11 +93,11 @@ export const Home = ({ children,className,svgOptions,}: { children: React.ReactN
       </div>
 
       <Box output={outputBox} />
-      <Footer /> 
-      <div className=' top-0 absolute w-full text-end'>
-      <Profile /> 
+      <Footer />
+      <div className=" top-0 absolute w-full text-end">
+        <Profile />
       </div>
-     </div>
+    </div>
   );
 };
 

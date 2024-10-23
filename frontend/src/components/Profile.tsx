@@ -12,9 +12,9 @@ const Profile = () => {
   const isUser = useSelector((store: any) => store.user.isUser);
   const navigate = useNavigate();
   const dispatch = useDispatch();
- const logOutUser = () => {
 
-   
+ const logOutUser = () => {
+  console.log('The image : ', userImage)
     try {
       signOut(auth);
       console.log("Signed out");
@@ -35,6 +35,7 @@ const Profile = () => {
             <div className="relative inline-flex pr-12 pt-4">
             <img className="w-10 h-10 rounded-full hidden" src={userImage} />
     
+            <img className="w-10 h-10 rounded-full hidden" src={userImage} />
             <img className="w-10 h-10 rounded-full" src={userImage} />
           </div>
           <div className='pt-4'>

@@ -30,7 +30,7 @@ export const TextHoverEffect = ({
   return (
     <svg
       ref={svgRef}
-      width="50%"
+      width="70%"
       height="50%"
       viewBox="0 0 300 100"
       xmlns="http://www.w3.org/2000/svg"

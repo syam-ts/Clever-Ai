@@ -3,7 +3,6 @@ import Footer from './components/Footer'
 import { Home } from './components/Home'
 import Login from './components/Login'
 import Signout from "./components/SignOut"
-import Profile from "./components/Profile"
 import { Provider } from 'react-redux'
 import store from './Redux/store'
  
@@ -16,10 +15,10 @@ const App = () => {
    
     <BrowserRouter>  
     <Routes>
-       <Route path='/' element={   <Home />} />
-       <Route path='/foo' element={   <Footer />} />
-       <Route path='/login' element={   <Login />} />
-       <Route path='/signout' element={   <Signout />} />
+       <Route path='/' element={<Home />} />
+       <Route path='/foo' element={<Footer />} />
+       <Route path='/login' element={<Login />} />
+       <Route path='/signout' element={<Signout />} />
         
     </Routes>
     </BrowserRouter>  
