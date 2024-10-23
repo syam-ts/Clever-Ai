@@ -9,7 +9,7 @@ import Profile from "./Profile"
 import { useSelector } from "react-redux";
 
 
- const Home:any = ({
+ const Home: React.FC = ({
   children,
   className,
   svgOptions,

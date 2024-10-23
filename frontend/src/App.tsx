@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./components/Home";
 import Login from "./components/Login";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { store, persistor } from "./Redux/store";
 import React from 'react'
+import Home from './components/Home';
 
 const App: React.FC = () => {
 
