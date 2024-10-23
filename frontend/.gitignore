@@ -11,7 +11,7 @@ backend/src/firebase.ts
 # src/utils/Firebase_Api_Key.ts
 
 node_modules
-dist
+
 dist-ssr
 *.local
 
