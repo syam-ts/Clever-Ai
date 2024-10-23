@@ -4,7 +4,7 @@
 
 <div>
 <h1> Clever-Ai </h1>
-<img style="border: 1px solid black" src="frontend/public/images/preview.png" />
+<img style="border: 1px solid black" src="frontend/public/images/preview-.png" />
 </br>
 </br>
 </br>
