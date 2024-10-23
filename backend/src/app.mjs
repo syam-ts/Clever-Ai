@@ -1,6 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser'
-import getAiRouter from './routes/getAiRoute'
+import getAiRouter from './routes/getAiRoute.ts'
 import cors from 'cors'
 
 const app = express();
