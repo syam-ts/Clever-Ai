@@ -5,6 +5,7 @@ import { PersistGate } from "redux-persist/integration/react";
 import { store, persistor } from "./Redux/store";
 import React from 'react'
 import Home from './components/Main'
+import { LoginBg } from "./components/LoginBg";
 
 const App: React.FC = () => {
 
@@ -14,7 +15,7 @@ const App: React.FC = () => {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/login" element={<LoginBg />} />
           </Routes>
         </BrowserRouter>
       </PersistGate>
