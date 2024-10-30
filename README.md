@@ -23,6 +23,7 @@
 * Typescript</br> 
 * Framer motion</br>
 * Tailwind CSS</br> 
+* Firebase
  
 
 
