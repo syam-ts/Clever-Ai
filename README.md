@@ -17,12 +17,12 @@
 
 <br>* Tools </br>
 * React.js</br>
-* Node.js</br>
-* Express.js</br>
 * Aceternity</br>
-* Typescript</br> 
 * Framer motion</br>
 * Tailwind CSS</br> 
+* Node.js</br>
+* Express.js</br>
+* Typescript</br> 
 * Firebase
  
 
